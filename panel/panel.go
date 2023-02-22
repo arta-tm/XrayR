@@ -18,6 +18,7 @@ import (
 	"github.com/xtls/xray-core/infra/conf"
 
 	"github.com/XrayR-project/XrayR/api"
+	"github.com/XrayR-project/XrayR/api/apanel"
 	"github.com/XrayR-project/XrayR/api/pmpanel"
 	"github.com/XrayR-project/XrayR/api/proxypanel"
 	"github.com/XrayR-project/XrayR/api/sspanel"
@@ -175,6 +176,8 @@ func (p *Panel) Start() {
 	for _, nodeConfig := range p.panelConfig.NodesConfig {
 		var apiClient api.API
 		switch nodeConfig.PanelType {
+		case "APanel":
+			apiClient = apanel.New(nodeConfig.ApiConfig)
 		case "SSpanel":
 			apiClient = sspanel.New(nodeConfig.ApiConfig)
 		// todo Deprecated after 2023.6.1
