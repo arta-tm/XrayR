@@ -60,7 +60,6 @@ func New(apiConfig *api.Config) *APIClient {
 		DeviceLimit:   apiConfig.DeviceLimit,
 		LocalRuleList: localRuleList,
 	}
-	apiClient.client.SetDebug(true)
 	return apiClient
 }
 
