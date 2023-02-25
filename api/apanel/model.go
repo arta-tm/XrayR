@@ -45,7 +45,7 @@ type UserInfo struct {
 	ProtocolParam string `json:"protocolParam"`
 	Obfs          string `json:"obfs"`
 	ObfsParam     string `json:"obfsParam"`
-	UUID          string `json:"userId"`
+	UUID          string `json:"uuid"`
 	AlterID       uint16 `json:"alterId"`
 }
 
